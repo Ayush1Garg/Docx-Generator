@@ -63,7 +63,7 @@ app.post('/generate-file', (req, res) => {
         const docxPath = path.join(outputDir, wordTemplate);
         fs.writeFileSync(docxPath, doc.getZip().generate({ type: 'nodebuffer' }));
         res.setHeader("Content-Type", "application/json");
-        res.json({ previewLink: `$/preview?file=${encodeURIComponent(wordTemplate)}&type=docx` });
+        res.json({ previewLink: `/preview?file=${encodeURIComponent(wordTemplate)}&type=docx` });
         /*
                 const pdfFilename = template + ".pdf";
                 const pdfPath = path.join(outputDir, pdfFilename);
