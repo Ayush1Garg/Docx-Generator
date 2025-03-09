@@ -61,5 +61,6 @@ pdfForm.addEventListener('submit', function (event) {
             document.getElementById('loading-overlay').classList.add('hidden');
             document.getElementById('loading-overlay').classList.remove('loading-overlay');
             document.getElementById('spinner').classList.remove('loading-spinner');
+            console.log(`${CONFIG.BACKEND_URL}/generate-file`);
         });
 });
