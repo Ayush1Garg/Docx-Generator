@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PDF Generator</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+        <div id="loading-overlay" class="hidden">
+                <div id="spinner"></div>
+                <p>Generating PDF... Please wait.</p>
+        </div>
+        <div class="container">
+                <h2 class="text-center">Generate Solar PDF</h2>
+                <form id="pdfForm">
+                        <div class="mb-3 form-group"><label>Inverter Capacity</label><input type="text"
+                                        name="inverter_capacity" class="form-control" required></div>
+                        <div class="mb-3 form-group"><label>Inverter Brand</label><input type="text"
+                                        name="inverter_brand" class="form-control" required></div>
+                        <div class="mb-3 form-group"><label>Panel Capacity</label><input type="text"
+                                        name="panel_capacity" class="form-control" required></div>
+                        <div class="mb-3 form-group"><label>Panel Brand</label><input type="text" name="panel_brand"
+                                        class="form-control" required></div>
+                        <div class="mb-3 form-group"><label>Invoice Date</label><input type="date" name="invoice_date"
+                                        class="form-control" id="invoice_date" required></div>
+                        <div class="mb-3 form-group"><label>Invoice Number</label><input type="text"
+                                        name="invoice_number" class="form-control" required></div>
+                        <div class="mb-3 form-group"><label>Consumer Name</label><input type="text" name="consumer_name"
+                                        class="form-control" required></div>
+                        <div class="mb-3 form-group"><label>Consumer Address</label><textarea name="consumer_address"
+                                        class="form-control"></textarea></div>
+                        <div class="mb-3 form-group"><label>Net Solar Capacity</label><input type="text"
+                                        name="net_solar_capacity" class="form-control" required></div>
+                        <div class="mb-3 form-group"><label>Number of Panels</label><input type="number"
+                                        name="no_of_panels" class="form-control" required></div>
+                        <div class="mb-3 form-group" id="serial_number_list">
+                                <label>Serial Numbers</label>
+                                <input type="text" name="serial_numbers" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Generate PDF</button>
+                </form>
+                <!-- <div id="download-links" class="text-center"></div> -->
+        </div>
+
+
+        <script src="js/config.js"></script>
+        <script src="js/script.js"></script>
+</body>
+
+</html>

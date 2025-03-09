@@ -1,0 +1,15 @@
+{
+  "name": "pdf-generator-backend",
+  "version": "1.0.0",
+  "description": "Backend for generating PDFs from Word templates",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "docxtemplater": "^3.27.0",
+    "pizzip": "^3.1.1"
+  }
+}
+
