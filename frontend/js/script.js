@@ -27,11 +27,25 @@ pdfForm.addEventListener('submit', function (event) {
     document.getElementById('spinner').classList.add('loading-spinner');
 
 
-    const formData = new FormData(this);
-
+    const formData = Object.fromEntries(new FormData(pdfForm));
+    let serialsArray = formData.serial_numbers.split(',').map(s => s.trim());
+    formData.serial_numbers = serialsArray;
+    if (serialsArray.length != Number(pdfFormData.no_of_panels)) {
+        document.body.classList.remove('loading');
+        document.getElementById('loading-overlay').classList.add('hidden');
+        document.getElementById('loading-overlay').classList.remove('loading-overlay');
+        document.getElementById('spinner').classList.remove('loading-spinner');
+        if (serialsArray.length > Number(pdfFormData.no_of_panels)) {
+            alert("Error: Number of serial numbers is more the number of panels");
+        }
+        else {
+            alert("Error: Number of serial numbers is less than the number of panels");
+        }
+        return;
+    }
     fetch(`${CONFIG.BACKEND_URL}/generate-file`, {
         method: 'POST',
-        body: JSON.stringify(Object.fromEntries(formData)),
+        body: JSON.stringify(formData),
         headers: { 'Content-Type': 'application/json' }
     })
         .then(response => {

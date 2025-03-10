@@ -39,11 +39,11 @@ app.post('/generate-file', (req, res) => {
         const zip = new PizZip(data);
         const doc = new docxtemplater(zip);
 
-        let serialsArray = serial_numbers.split(',').map(s => s.trim());
+        // let serialsArray = serial_numbers.split(',').map(s => s.trim());
 
         let serialData = {};
         for (let i = 0; i < 24; i++) {
-            serialData[`serial_number_${i + 1}`] = serialsArray[i] || "";
+            serialData[`serial_number_${i + 1}`] = serial_numbers[i] || "";
         }
 
         doc.render({
