@@ -27,8 +27,8 @@ pdfForm.addEventListener('submit', function (event) {
     document.getElementById('spinner').classList.add('loading-spinner');
 
 
-    const formData = Object.fromEntries(new FormData(pdfForm));
-    let serialsArray = formData.serial_numbers.split(',').map(s => s.trim());
+    const pdfFormData = Object.fromEntries(new FormData(pdfForm));
+    let serialsArray = pdfFormData.serial_numbers.split(',').map(s => s.trim());
     formData.serial_numbers = serialsArray;
     if (serialsArray.length != Number(pdfFormData.no_of_panels)) {
         document.body.classList.remove('loading');
@@ -45,7 +45,7 @@ pdfForm.addEventListener('submit', function (event) {
     }
     fetch(`${CONFIG.BACKEND_URL}/generate-file`, {
         method: 'POST',
-        body: JSON.stringify(formData),
+        body: JSON.stringify(pdfFormData),
         headers: { 'Content-Type': 'application/json' }
     })
         .then(response => {
