@@ -29,7 +29,7 @@ pdfForm.addEventListener('submit', function (event) {
 
     const pdfFormData = Object.fromEntries(new FormData(pdfForm));
     let serialsArray = pdfFormData.serial_numbers.split(',').map(s => s.trim());
-    formData.serial_numbers = serialsArray;
+    pdfFormData.serial_numbers = serialsArray;
     if (serialsArray.length != Number(pdfFormData.no_of_panels)) {
         document.body.classList.remove('loading');
         document.getElementById('loading-overlay').classList.add('hidden');
