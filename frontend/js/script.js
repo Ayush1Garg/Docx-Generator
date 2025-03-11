@@ -1,7 +1,6 @@
 const pdfForm = document.getElementById('pdfForm');
 const loadingIndicator = document.getElementById('loading');
 const invoice_date = document.getElementById('invoice_date');
-// const serial_number_list = document.getElementById('serial_number_list');
 
 const today = new Date();
 const day = String(today.getDate()).padStart(2, '0');
@@ -9,14 +8,6 @@ const month = String(today.getMonth() + 1).padStart(2, '0');
 const year = today.getFullYear();
 const formattedDate = `${year}-${month}-${day}`;
 invoice_date.value = formattedDate;
-
-// selectedTemplate.addEventListener("change", function () {
-//     if (selectedTemplate.value === "Serial_No_&_List_of_Polycrystalline_Silicon_Photovoltaic_Modules") {
-//         serial_number_list.classList.remove("hidden");
-//     } else {
-//         serial_number_list.classList.add("hidden");
-//     }
-// })
 
 pdfForm.addEventListener('submit', function (event) {
     event.preventDefault();
