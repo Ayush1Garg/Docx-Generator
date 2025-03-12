@@ -4,9 +4,7 @@ const loadingIndicator = document.getElementById('loading');
 flatpickr("#invoice_date", {
     dateFormat: "d-m-Y",
     defaultDate: new Date(),
-    onChange: function (selectedDates, dateStr, instance) {
-        console.log("Selected date:", dateStr);
-    }
+    maxDate: new Date()
 });
 
 pdfForm.addEventListener('submit', function (event) {
