@@ -17,28 +17,33 @@
         <div class="container">
                 <h2 class="text-center">Generate Document</h2>
                 <form id="pdfForm">
-                        <div class="mb-3 form-group"><label>Inverter Capacity (KW)</label><input type="text"
-                                        name="inverter_capacity" class="form-control" required></div>
-                        <div class="mb-3 form-group"><label>Inverter Brand</label><input type="text"
-                                        name="inverter_brand" class="form-control" required></div>
-                        <div class="mb-3 form-group"><label>Panel Capacity (W)</label><input type="text"
-                                        name="panel_capacity" class="form-control" required></div>
-                        <div class="mb-3 form-group"><label>Panel Brand</label><input type="text" name="panel_brand"
+                        <div class="mb-3 form-group"><label for="inverter_capacity">Inverter Capacity (KW)</label><input
+                                        type="text" name="inverter_capacity" class="form-control" required></div>
+                        <div class="mb-3 form-group"><label for="inverter_brand">Inverter Brand</label><input
+                                        type="text" name="inverter_brand" class="form-control" required></div>
+                        <div class="mb-3 form-group"><label for="panel_capacity">Panel Capacity (W)</label><input
+                                        type="text" name="panel_capacity" class="form-control" required></div>
+                        <div class="mb-3 form-group"><label for="panel_brand">Panel Brand</label><input type="text"
+                                        name="panel_brand" class="form-control" required></div>
+                        <div class="mb-3 form-group">
+                                <label for="invoice_date">Invoice Date</label>
+                                <input type="text" id="invoice_date" class="form-control" name="invoice_date"
+                                        placeholder="Select Date" required>
+                        </div>
+                        <div class="mb-3 form-group"><label for="invoice_number">Invoice Number
+                                        (ME/2024-25/XXX)</label><input type="text" name="invoice_number"
                                         class="form-control" required></div>
-                        <div class="mb-3 form-group"><label>Invoice Date</label><input type="date" name="invoice_date"
-                                        class="form-control" id="invoice_date" required></div>
-                        <div class="mb-3 form-group"><label>Invoice Number (ME/2024-25/XXX)</label><input type="text"
-                                        name="invoice_number" class="form-control" required></div>
-                        <div class="mb-3 form-group"><label>Consumer Name</label><input type="text" name="consumer_name"
-                                        class="form-control" required></div>
-                        <div class="mb-3 form-group"><label>Consumer Address</label><textarea name="consumer_address"
-                                        class="form-control"></textarea></div>
-                        <div class="mb-3 form-group"><label>Net Solar Capacity (KW)</label><input type="text"
-                                        name="net_solar_capacity" class="form-control" required></div>
-                        <div class="mb-3 form-group"><label>Number of Panels</label><input type="number"
-                                        name="no_of_panels" class="form-control" required></div>
+                        <div class="mb-3 form-group"><label for="consumer_name">Consumer Name</label><input type="text"
+                                        name="consumer_name" class="form-control" required></div>
+                        <div class="mb-3 form-group"><label for="consumer_address">Consumer Address</label><textarea
+                                        name="consumer_address" class="form-control"></textarea></div>
+                        <div class="mb-3 form-group"><label for="net_solar_capacity">Net Solar Capacity
+                                        (KW)</label><input type="text" name="net_solar_capacity" class="form-control"
+                                        required></div>
+                        <div class="mb-3 form-group"><label for="no_of_panels">Number of Panels</label><input
+                                        type="number" name="no_of_panels" class="form-control" required></div>
                         <div class="mb-3 form-group" id="serial_number_list">
-                                <label>Serial Numbers</label>
+                                <label for="serial_numbers">Serial Numbers</label>
                                 <input type="text" name="serial_numbers" class="form-control">
                         </div>
                         <button type="submit" class="btn btn-primary w-100">Generate Document</button>

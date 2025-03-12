@@ -1,13 +1,13 @@
 const pdfForm = document.getElementById('pdfForm');
 const loadingIndicator = document.getElementById('loading');
-const invoice_date = document.getElementById('invoice_date');
 
-const today = new Date();
-const day = String(today.getDate()).padStart(2, '0');
-const month = String(today.getMonth() + 1).padStart(2, '0');
-const year = today.getFullYear();
-const formattedDate = `${year}-${month}-${day}`;
-invoice_date.value = formattedDate;
+flatpickr("#invoice_date", {
+    dateFormat: "d-m-Y",
+    defaultDate: new Date(),
+    onChange: function (selectedDates, dateStr, instance) {
+        console.log("Selected date:", dateStr);
+    }
+});
 
 pdfForm.addEventListener('submit', function (event) {
     event.preventDefault();
