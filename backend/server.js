@@ -53,7 +53,7 @@ app.post('/generate-file', (req, res) => {
             panel_capacity: panel_capacity,
             panel_brand: panel_brand,
             invoice_date: invoice_date,
-            invoice_number: "ME/2024-25/" + String(invoice_number),
+            invoice_number: invoice_number,
             consumer_name: consumer_name,
             consumer_address: consumer_address,
             net_solar_capacity: net_solar_capacity,
